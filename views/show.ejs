@@ -1,0 +1,37 @@
+<% include ./partials/header %>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">People</h3>
+  </div>
+  <div class="panel-body">
+	  <div class="container">
+		  <h2>list of people</h2>            
+		  <table class="table table-bordered">
+			  <thead>
+				  <tr>
+					  <th>Firstname</th>
+					  <th>Age</th>
+					  <th>Email</th>
+					  <th>Mobile-No.</th>
+				  </tr>
+			  </thead>
+			  <tbody>
+				  <% person.forEach((person)=>{ %>
+				  <tr>
+					  <td><%= person.name %></td>
+					  <td><%= person.age %></td>
+					  <td><%= person.gender %></td>
+					  <td><%= person.mobile_number %></td>
+					  <td><a class="btn btn-primary btn-block" href="/person/<%= person._id%>">edit the person</a></td>
+				  </tr>
+				  <% }) %> 
+			  </tbody>
+		  </table>
+	  </div>
+  </div>
+</div>
+
+
+
+<% include ./partials/footer %>

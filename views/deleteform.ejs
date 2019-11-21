@@ -1,0 +1,35 @@
+<% include ./partials/header %>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Delete Form</h3>
+  </div>
+  <div class="panel-body">
+	  <div class="container">
+		  <h2>list of people</h2>            
+		  <table class="table table-bordered">
+			  <thead>
+				  <tr>
+					  <th>Firstname</th>
+					  <th>Id</th>
+				  </tr>
+			  </thead>
+			  <tbody>
+				  <% person.forEach((person)=>{ %>
+				  <tr>
+					  <td><%= person.name %></td>
+					  <td><%= person._id %></td>
+					  <td>
+						  <form action="/person/delete/<%=person._id %>" method="post">
+							  <button class="btn btn-danger btn-block" href="/person">Delete</button>
+						  </form>
+					  </td>
+				  </tr>
+				  <% }) %> 
+			  </tbody>
+		  </table>
+	  </div>
+  </div>
+</div>
+
+<% include ./partials/footer %>

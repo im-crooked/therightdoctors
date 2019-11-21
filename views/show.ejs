@@ -24,6 +24,10 @@
 					  <td><%= person.gender %></td>
 					  <td><%= person.mobile_number %></td>
 					  <td><a class="btn btn-primary btn-block" href="/person/<%= person._id%>">edit the person</a></td>
+					  <td><form action="/person/delete/<%=person._id %>" method="post">
+						  <button class="btn btn-danger btn-block" href="/person">Delete</button>
+						  </form>
+					  </td>
 				  </tr>
 				  <% }) %> 
 			  </tbody>
